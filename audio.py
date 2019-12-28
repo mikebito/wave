@@ -46,26 +46,26 @@ result2 = np.frombuffer(data,dtype="int8") / float (2**15)
 result3 = np.frombuffer(data,dtype="int32") / float (2**15)
 result4 = np.frombuffer(data,dtype="int64") / float (2**15)
 minus = result * -1
-try:
-    with open ('file.txt', 'w') as f:
-        print(a, result, result2, result3, minus, file=ｆ)
-        b = type(result),type(a),
-        c = result.dtype, a.dtype,
-        d = float (2**15)
-        e = type(d)
-        f = result.ndim, a.ndim,
-        g = result.real, a.real,
-        h = result.imag, a.imag,
+# try:
+#     with open ('file.txt', 'w') as f:
+#         print(a, result, result2, result3, minus, file=ｆ)
+#         b = type(result),type(a),
+#         c = result.dtype, a.dtype,
+#         d = float (2**15)
+#         e = type(d)
+#         f = result.ndim, a.ndim,
+#         g = result.real, a.real,
+#         h = result.imag, a.imag,
 
-        print(b)
-        print(c) 
-        print(d)
-        print(e)
-        print(f)
-        print(g)
-        print(h)
-except FileExistsError:
-    pass
+#         print(b)
+#         print(c) 
+#         print(d)
+#         print(e)
+#         print(f)
+#         print(g)
+#         print(h)
+# except FileExistsError:
+#     pass
 
 
 plt.plot(result, color = "blue", linestyle = "-")
