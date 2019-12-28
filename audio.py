@@ -23,8 +23,6 @@ all = []
 for i in range (0,int(RATE / chunk * RECORD_SECONDS)): 
     data = stream.read(chunk)
     all.append(data)
-   
-
 
 print("Finished Recording.")
 
