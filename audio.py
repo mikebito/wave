@@ -10,7 +10,8 @@ CHANNELS = 1
 RATE = 44100
 RECORD_SECONDS = 3
 WAVE_OUTPUT_FILENAME = "output.wav"
-
+r= 1.059463094
+r12=r*r*r*r
 p = pyaudio.PyAudio()
 
 stream = p.open(format = FORMAT,
@@ -24,10 +25,8 @@ stream = p.open(format = FORMAT,
 print("Now Recording...")
 all = []
 for i in range (0,int(RATE / chunk * RECORD_SECONDS)): 
-    while stream.is_active():
-        input = stream.read(chunk)
-        output = stream.write(input)
-    all.append(data,)
+    data = stream.read(chunk)
+    all.append(data)
    
 
 
@@ -82,5 +81,5 @@ wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
 wf.setnchannels(CHANNELS)
 wf.setsampwidth(p.get_sample_size(FORMAT))
 wf.setframerate(RATE)
-wf.writeframes(b''.join(all))
+wf.writeframes(b''.join(all)) 
 wf.close()
