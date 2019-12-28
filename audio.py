@@ -10,8 +10,6 @@ CHANNELS = 1
 RATE = 44100
 RECORD_SECONDS = 3
 WAVE_OUTPUT_FILENAME = "output.wav"
-r= 1.059463094
-r12=r*r*r*r
 p = pyaudio.PyAudio()
 
 stream = p.open(format = FORMAT,
