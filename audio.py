@@ -12,13 +12,14 @@ RECORD_SECONDS = 3              #３秒録音
 
 p = pyaudio.PyAudio()           #!!!要調べ！！！
 
+ #!!!要調べ！！！
 stream = p.open(format = FORMAT,
                 channels = CHANNELS,
                 rate = RATE,
                 input = True,
                 frames_per_buffer = chunk
 )
-
+ #!!!要調べ！！！
 print("Now Recording...")
 all = []
 for i in range (0,int(RATE / chunk * RECORD_SECONDS)): 
@@ -27,14 +28,15 @@ for i in range (0,int(RATE / chunk * RECORD_SECONDS)):
 
 print("Finished Recording.")
 
-stream.close()
+stream.close()              
 p.terminate()
 
+ #!!!要調べ！！！
 data = b"".join(all)
 result = np.frombuffer(data,dtype="int16") / float (2**15)
 minus = result * -1
 
-
+ #!!!要調べ！！！
 plt.plot(result, color = "blue", linestyle = "-")
 plt.plot(minus, color = "cyan", linestyle = "--")
 plt.savefig('wave.png')
