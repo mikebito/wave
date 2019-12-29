@@ -1,16 +1,16 @@
 #使うモジュール
-import pyaudio                      #録音    
-import numpy as np                  #計算
-import matplotlib.pyplot as plt     #グラフ化
+import pyaudio                      #録音用    
+import numpy as np                  #計算用
+import matplotlib.pyplot as plt     #グラフ化用
 
 #設定
-chunk = 1024
-FORMAT = pyaudio.paInt16        #整数型
-CHANNELS = 1                    #チャンネル数
-RATE = 44100                    #441.kHz
+chunk = 1024                    #　!!!要調べ！！！
+FORMAT = pyaudio.paInt16        #16進数に指定
+CHANNELS = 1                    #モノラルに指定
+RATE = 44100                    #　!!!要調べ！！！
 RECORD_SECONDS = 3              #３秒録音
 
-p = pyaudio.PyAudio()           
+p = pyaudio.PyAudio()           #!!!要調べ！！！
 
 stream = p.open(format = FORMAT,
                 channels = CHANNELS,
