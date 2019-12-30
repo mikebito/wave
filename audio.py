@@ -21,7 +21,7 @@ stream = p.open(format = FORMAT,
 )
  #!!!要調べ！！！
 print("Now Recording...")
-all = []
+all = [] #リスト作成
 for i in range (0,int(RATE / chunk * RECORD_SECONDS)): 
     data = stream.read(chunk)
     all.append(data)
