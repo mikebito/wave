@@ -44,6 +44,7 @@ result2 = np.frombuffer(data,dtype="int8") / float (2**15)
 result3 = np.frombuffer(data,dtype="int32") / float (2**15)
 result4 = np.frombuffer(data,dtype="int64") / float (2**15)
 minus = result * -1
+
 try:
     with open ('file.txt', 'w') as f:
         print(a, result, result2, result3, minus, file=ｆ)
