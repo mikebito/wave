@@ -8,7 +8,7 @@ FORMAT = pyaudio.paInt16
 
 CHANNELS = 1
 RATE = 44100
-RECORD_SECONDS = 3
+RECORD_SECONDS = 5
 WAVE_OUTPUT_FILENAME = "output.wav"
 r= 1.059463094
 r12=r*r*r*r
@@ -48,7 +48,7 @@ minus = result * -1
 
 try:
     with open ('file.txt', 'w') as f:
-        print(a, result, result2, result3, minus, file=ｆ)
+        print(all, file=ｆ)
         b = type(result),type(a),
         c = result.dtype, a.dtype,
         d = float (2**15)
@@ -66,6 +66,12 @@ try:
         print(h)
 except FileExistsError:
     pass
+
+with open ('file2.txt', 'w') as f:
+    print(data, file=ｆ)
+
+with open ('file3.txt', 'w') as f:
+    print(len(all), file=ｆ)
 
 
 plt.plot(result, color = "blue", linestyle = "-")
