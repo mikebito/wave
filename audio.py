@@ -4,10 +4,10 @@ import numpy as np                  #計算用
 import matplotlib.pyplot as plt     #グラフ化用
 
 #設定
-chunk = 1024                    #音声データメモリーサイズ指定
+chunk = 1024             #音声データメモリーサイズ指定
 FORMAT = pyaudio.paInt16        #16進数に指定
 CHANNELS = 1                    #モノラルに指定
-RATE = 44100                    #サンプリング速度
+RATE = 44100                     #サンプリング速度
 RECORD_SECONDS = 3              #３秒録音
 
 p = pyaudio.PyAudio()           #!!!要調べ！！！
@@ -26,6 +26,7 @@ for i in range (0,int(RATE / chunk * RECORD_SECONDS)):
     data = stream.read(chunk)
     all.append(data)
 
+print(all)
 print("Finished Recording.")
 
 stream.close()              
@@ -33,13 +34,17 @@ p.terminate()
 
  #!!!要調べ！！！
 data = b"".join(all)
-result = np.frombuffer(data,dtype="int16") / float (2**15)
+result = np.frombuffer(data,dtype="int32") / float (2**15)
 minus = result * -1
 
  #!!!要調べ！！！
 plt.plot(result, color = "blue", linestyle = "-")
-plt.plot(minus, color = "cyan", linestyle = "--")
+# plt.plot(minus, color = "orange", linestyle = "-")
 plt.savefig('wave.png')
 plt.savefig('wave.pdf')
 plt.show()
 
+plt.plot(result, color = "blue", linestyle = "-")
+plt.plot(minus, color = "orange", linestyle = "-")
+
+plt.show()
