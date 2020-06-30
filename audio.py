@@ -4,10 +4,10 @@ import numpy as np                  #計算用
 import matplotlib.pyplot as plt     #グラフ化用
 
 #設定
-chunk = 1024             #音声データメモリーサイズ指定
+chunk = 2048             #音声データメモリーサイズ指定
 FORMAT = pyaudio.paInt16        #16進数に指定
 CHANNELS = 1                    #モノラルに指定
-RATE = 44100                     #サンプリング速度
+RATE = 96000                     #サンプリング速度
 RECORD_SECONDS = 3              #３秒録音
 
 p = pyaudio.PyAudio()           #!!!要調べ！！！
